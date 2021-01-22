@@ -1,0 +1,29 @@
+@model Microsoft.EntityFrameworkCore.DbSet<Prenotazione>
+@{
+    
+    ViewData["Title"] = "Grazie";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Grazie</h1>
+   
+    <h2>La prenotazione è avvenuta con successo.</h2>
+    <h3>Ecco l'elenco delle persone prenotate</h3>
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr><th>Nome</th><th>Email</th><th>Data</th></tr>
+        </thead>
+        <tbody>
+            @foreach (Prenotazione p  in Model)
+            {
+                <tr>
+                    <td>@p.Nome</td>
+                    <td>@p.Email</td>
+                    <td>@p.Data</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
